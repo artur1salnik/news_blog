@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+    <div class="section-top">
+        <img src="{% static 'media/images/man.jpg' %}" width="100%">
+    </div>
+    <br/>
+    <h1 class="text-center font-italic text-uppercase">последние новости</h1>
+    <br/>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                {% for article in latest_articles %}
+                    <div class="col-lg-4">
+                    <div class="card text-center" style="background-color: #e3e4e6">
+                        <img class="card-img-top" src="{{ article.article_image.url }}" height="200px" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title">{{article.article_title}}</h4>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <em>{{ article.pub_date }}</em>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a href="{%  url 'news:detail' article.id %}" class="btn btn-primary">Подробнее &raquo;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <br/>
+    <h4 class="text-center"><a href="http://127.0.0.1:8083/news/" class="btn btn-success" role="button">Все новости &raquo;</a></h4>
+    <br/>
+{% endblock %}

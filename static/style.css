@@ -1,0 +1,40 @@
+.navbar {
+    background-color: #4f4f4f;
+}
+
+.navbar a {
+    color: white;
+    font-size: large;
+}
+
+.navbar-right a {
+    padding-left: 25px;
+}
+
+.navbar-right a:hover {
+    color: #6DDCBD;
+    text-decoration: none;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.wrapper-content {
+	min-height: calc(100vh - 2.5em);
+}

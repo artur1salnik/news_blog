@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    {{ article.article_title }}
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="container text-center">
+            <br/><h1>{{ article.article_title }}</h1><br>
+            <em>{{ article.pub_date }}</em><br><br>
+            <img src="{{ article.article_image.url }}" height="500px"/><br><br>
+            <article class="text-left" style="font-size: large; white-space: pre-wrap">{{ article.article_text }}</article>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container-fluid">
+        <h3>Комментарии</h3><br>
+        <form action="{% url 'news:leave_comment' article.id %}" method="POST">
+            {% csrf_token %}
+            <input type="text" required placeholder="Ваше имя" name="name"><br><br>
+            <textarea name="text" required placeholder="Текст комментария" cols="30" rows="5" wrap="soft"></textarea><br>
+            <button type="submit">Оставить комментарий</button>
+        </form>
+    </div>
+
+    <hr>
+    <div class="container-fluid">
+    {% if comments_list %}
+        {% for c in comments_list %}
+            <p>
+                <strong style="font-size: large">{{ c.author_name }}</strong>
+                <p>{{ c.comment_text }}</p>
+                <em style="font-size: small">{{ c.comment_date }}</em>
+            </p><hr/>
+        {% endfor %}
+    {% else %}
+        <p class="font-weight-bold">Комментариев нет</p>
+    {% endif %}
+    </div>
+
+
+
+{% endblock %}

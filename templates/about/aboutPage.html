@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+ О сайте
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid pt-5">
+        <div class="container text-center p-2">
+            <h1 class="p-5">На сайте публикуются футбольные новости:</h1>
+            <div class="row" style="margin-bottom: 30px; font-size: 25px">
+                <div class="col-6 my-auto text-center font-italic">
+                    <p>- Топовые европейские чемпионаты</p>
+                </div>
+                <div class="col-6 text-left">
+                    <img src="{% static 'media/images/topliga.jpeg' %}" height="100px" width="170px">
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 30px; font-size: 25px">
+                <div class="col-6 my-auto text-center font-italic">
+                    <p>- Лига чемпионов</p>
+                </div>
+                <div class="col-6 text-left">
+                    <img src="{% static 'media/images/ligachemp.jpg' %}" height="100px" width="170px">
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 30px; font-size: 25px">
+                <div class="col-6 my-auto text-center font-italic">
+                    <p>- Лига Европы</p>
+                </div>
+                <div class="col-6 text-left">
+                    <img src="{% static 'media/images/ligaeuro.jpeg' %}" height="100px" width="170px">
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 30px; font-size: 25px">
+                <div class="col-6 my-auto text-center font-italic">
+                    <p>- Чемпионат мира</p>
+                </div>
+                <div class="col-6 text-left">
+                    <img src="{% static 'media/images/worldcup.jpeg' %}" height="100px" width="170px">
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 30px; font-size: 25px">
+                <div class="col-6 my-auto text-center font-italic">
+                    <p>- Чемпионат Европы</p>
+                </div>
+                <div class="col-6 text-left">
+                    <img src="{% static 'media/images/eurocup.jpg' %}" height="100px" width="170px">
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 30px; font-size: 25px">
+                <div class="col-6 my-auto text-center font-italic">
+                    <p>- Лига наций</p>
+                </div>
+                <div class="col-6 text-left">
+                    <img src="{% static 'media/images/liganations.jpg' %}" height="100px" width="170px">
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 30px; font-size: 25px">
+                <div class="col-6 my-auto text-center font-italic">
+                    <p>- Трансферы</p>
+                </div>
+                <div class="col-6 text-left">
+                    <img src="{% static 'media/images/transfers.jpg' %}" height="100px" width="170px">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br>
+{% endblock %}
