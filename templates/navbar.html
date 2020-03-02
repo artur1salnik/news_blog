@@ -2,12 +2,12 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <nav class="navbar">
-    <a class="navbar-brand" href="http://127.0.0.1:8083">
+    <a class="navbar-brand" href="{% url 'index' %}">
         <img id="f" title="Главная" src="https://us.123rf.com/450wm/photoart23d/photoart23d1705/photoart23d170500507/79285197-las-luces-de-ne%C3%B3n-de-la-letra-f-indicaron-aislado-en-fondo-negro.jpg?ver=6" width="35px" height="35px" alt="logo">
     </a>
     <div class="navbar-right">
-        <a href="http://127.0.0.1:8083/news/">Новости</a>
-        <a href="http://127.0.0.1:8083/about/">О сайте</a>
-        <a href="http://127.0.0.1:8083/contact/">Контакты</a>
+        <a href="{% url 'news:new' %}">Новости</a>
+        <a href="{% url 'about' %}">О сайте</a>
+        <a href="{% url 'contact' %}">Контакты</a>
     </div>
 </nav>
