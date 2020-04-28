@@ -29,19 +29,12 @@
 
     <hr>
     <div class="container-fluid">
-{#    {% if comments_list %}#}
         {% for c in comments_list %}
             <p>
                 <strong style="font-size: large">{{ c.author_name }}</strong>
                 <p>{{ c.comment_text }}</p>
                 <em style="font-size: small">{{ c.comment_date }}</em>
-            </p><hr/>
+            </p>
+            <hr/>
         {% endfor %}
-{#    {% else %}#}
-{#        <p class="font-weight-bold">Комментариев нет</p>#}
-{#    {% endif %}#}
-    </div>
-
-
-
 {% endblock %}
