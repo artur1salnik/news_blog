@@ -2,19 +2,26 @@
     background-color: #4f4f4f;
 }
 
-.navbar a {
+.navbar-dark .navbar-collapse .navbar-nav .nav-item .nav-link {
     color: white;
     font-size: large;
+
 }
 
-.navbar-right a {
-    padding-left: 25px;
-}
-
-.navbar-right a:hover {
+.navbar-dark .navbar-collapse .navbar-nav .nav-item .nav-link:hover {
     color: #6DDCBD;
-    text-decoration: none;
+
 }
+
+/*.navbar a {*/
+/*    color: #ffffff;*/
+/*    font-size: large;*/
+/*}*/
+
+/*.navbar a:hover {*/
+/*    color: #6DDCBD;*/
+/*    text-decoration: none;*/
+/*}*/
 
 .navbar-brand:hover {
     transform: scale(1.2);

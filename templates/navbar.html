@@ -1,13 +1,29 @@
 {% load static %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<nav class="navbar">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="{% url 'index' %}">
         <img id="f" title="Главная" src="https://us.123rf.com/450wm/photoart23d/photoart23d1705/photoart23d170500507/79285197-las-luces-de-ne%C3%B3n-de-la-letra-f-indicaron-aislado-en-fondo-negro.jpg?ver=6" width="35px" height="35px" alt="logo">
     </a>
-    <div class="navbar-right">
-        <a href="{% url 'news:new' %}">Новости</a>
-        <a href="{% url 'about' %}">О сайте</a>
-        <a href="{% url 'contact' %}">Контакты</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'news:new' %}">Новости</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">О сайте</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Контакты</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" action="{% url 'news:new' %}">
+            <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search" name="search">
+            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Найти</button>
+        </form>
     </div>
 </nav>

@@ -3,10 +3,16 @@ from django.shortcuts import render
 from django.urls import reverse
 from .models import *
 from django.core.paginator import Paginator
+from django.db.models import Q
 
 
 def new(request):
-    articles_list = Article.objects.order_by('-pub_date')
+    search_query = request.GET.get('search', '')
+    if search_query:
+        articles_list = Article.objects.filter(Q(article_title__icontains=search_query) | Q(article_text__icontains=search_query))
+    else:
+        articles_list = Article.objects.order_by('-pub_date')
+
     paginator = Paginator(articles_list, 10)
     page_number = request.GET.get('page', 1)
     page = paginator.get_page(page_number)
@@ -36,7 +42,8 @@ def detail(request, article_id):
     except:
         raise Http404("Статья не найдена")
     comments_list = a.comment_set.order_by('-id')
-    return render(request, 'news/detail.html', {'article': a, 'comments_list': comments_list})
+    sum_com = Comment.objects.filter(article_id=a).count()
+    return render(request, 'news/detail.html', {'article': a, 'comments_list': comments_list, 'sum_com':sum_com})
 
 
 def leave_comment(request, article_id):
@@ -49,4 +56,3 @@ def leave_comment(request, article_id):
 
     return HttpResponseRedirect(reverse('news:detail', args=(a.id,)))
 
-# Create your views here.
