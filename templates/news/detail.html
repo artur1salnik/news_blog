@@ -10,7 +10,7 @@
         <div class="container text-center">
             <br/><h1>{{ article.article_title }}</h1><br>
             <em>{{ article.pub_date }}</em><br><br>
-            <img src="{{ article.article_image.url }}" height="500px"/><br><br>
+            <img src="{{ article.article_image.url }}" style="max-width: 100%" height="auto"/><br><br>
             <article class="text-left" style="font-size: large; white-space: pre-wrap">{{ article.article_text }}</article>
         </div>
     </div>
