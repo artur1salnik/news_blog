@@ -18,14 +18,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.author_name
-
-# class ArticleImage(models.Model):
-#     article = models.ForeignKey(Article, on_delete=models.CASCADE, blank=True, null=True, default=None)
-#     article_image = models.ImageField(upload_to='news_images/')
-
-# class ArticleImage(models.Model):
-#     article = models.ForeignKey(Article, on_delete=models.PROTECT, blank=True, null=True, default=None)
-#     image = models.ImageField(upload_to='/news_images/')
-#
-#     def __str__(self):
-#         return "%s" % self.id

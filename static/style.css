@@ -13,16 +13,6 @@
 
 }
 
-/*.navbar a {*/
-/*    color: #ffffff;*/
-/*    font-size: large;*/
-/*}*/
-
-/*.navbar a:hover {*/
-/*    color: #6DDCBD;*/
-/*    text-decoration: none;*/
-/*}*/
-
 .navbar-brand:hover {
     transform: scale(1.2);
 }
